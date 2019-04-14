@@ -3,5 +3,7 @@ angular
     .module('mainApp',[ 
     'ui.router', 
     'ngCookies',
-    'restangular'
+    'restangular',
+    'ui.bootstrap',
+    'duScroll'
 ]);

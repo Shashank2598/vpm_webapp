@@ -2,17 +2,19 @@
 <html>
 
 <head>
-    <title>Tournament Management</title>
+    <title>Vishwa Prakash Mission</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="main.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+
     <div ng-app="mainApp">
         <ui-view></ui-view>
     </div>
@@ -22,9 +24,17 @@
     <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
     <script src="node_modules/underscore/underscore.js"></script>
     <script src="node_modules/restangular/dist/restangular.js"></script>
+    <script src='node_modules/angular-touch/angular-touch.min.js'></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="node_modules/angular-scroll/angular-scroll.min.js"></script>
 
     <script src="main.js"></script>
     <script src="app_config.js"></script>
+
+    <script src="apps/navigation/navigation_directive.js"></script>
+    <script src="apps/navigation/navigation_controller.js"></script>
+    <script src="apps/navigation/navigation_service.js"></script>
 
     <script src="apps/home/homeController.js"></script>
 
