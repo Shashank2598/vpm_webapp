@@ -1,0 +1,29 @@
+<div ng-controller="navigationController as $ctrl">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#myPage"><img src="/apps/static/images/vpm_logo.png"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-center">
+          <li><a ui-sref="home">HOME</a></li>
+          <li><a href="#about" du-smooth-scroll>ABOUT</a></li>
+          <li><a href="#social-activities" du-smooth-scroll>SOCIAL ACTIVITIES</a></li>
+          <li><a href="#contact" du-smooth-scroll>CONTACT</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-hide="isLoggedIn">
+          <li><a ng-click="login()">LOGIN</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-show="isLoggedIn">
+          <li><a ng-click="logout()">LOGOUT</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+</div>

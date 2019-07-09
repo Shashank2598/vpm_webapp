@@ -1,0 +1,27 @@
+{
+  "name": "angularjs1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a localhost -c-l -p 8002"
+  },
+  "dependencies": {
+    "angular-cookies": "^1.7.6",
+    "angular-ui-carousel": "^0.1.10",
+    "jquery": "^3.3.1",
+    "npm": "^6.7.0",
+    "restangular": "^1.6.1",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "angular": "^1.7.7",
+    "angular-mocks": "^1.7.7",
+    "angular-ui-router": "^1.0.22",
+    "jasmine-core": "^3.3.0",
+    "karma": "^4.0.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1"
+  }
+}

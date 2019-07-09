@@ -1,0 +1,26 @@
+<div class="contianer" ng-controller="socialActivitiesListController">
+  <navigation></navigation>
+  <div class="container social-activities-list">
+    <div class='page-header'>
+      <div class='btn-toolbar pull-right'>
+        <div class='btn-group'>
+          <button type='button' class='btn btn-primary' ui-sref="home">Add New</button>
+        </div>
+      </div>
+      <h2 class="text-center">SOCIAL ACTIVITIES</h2>
+    </div>
+    <div class="row">
+      <div class="well" ng-repeat="activity in socialActivities">
+        <div class="media">
+          <a class="pull-left" href="seeDetail({{activity.id}})">
+            <img class="media-object" src="{{activity.image}}">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">{{activity.title}}</h4>
+            <p>{{activity.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

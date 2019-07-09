@@ -1,0 +1,36 @@
+<div  ng-controller="login as log">
+    <div ng-show="!anyRequestOngoing">
+        <div class="login-form centered">
+            <form name="loginForm" ng-submit="submitted=true" novalidate>
+                <h2 class="text-center">Log in</h2>
+
+                <div class="apiErrors" ng-repeat="error in errors">
+                    <p >{{error}}</p>
+                </div>
+                
+                <div class="form-group" ng-class="{'has-error' : loginForm.email.$invalid && loginForm.email.$touched}">
+                    <input type="email" id="email" name="email" placeholder="Email" class="form-control" ng-model="email" required>
+                    <p class="help-block" ng-if="loginForm.email.$touched && loginForm.email.$error.required">Required</p>
+                    <p class="help-block" ng-show="loginForm.email.$touched && loginForm.email.$error.email">
+                    Please enter valid Email</p>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : loginForm.password.$invalid && loginForm.password.$touched}" ng-hide="passwordNotKnown">
+                    <input type='{{passwordType}}' name="password" id="password" ng-model="password" class="form-control"
+                        placeholder="Password" required="required">
+                    <p class="help-block" ng-show="loginForm.password.$touched && loginForm.password.$error.required">Required</p>
+                </div>
+                <div class="checkbox" ng-hide="passwordNotKnown">
+                    <label><input type="checkbox" ng-model="hideButton" ng-change="showPassword()"> Show Password</label>
+                </div>
+
+                <div class="form-group">
+                    <button ng-disabled="loginForm.$invalid" ng-click="submit()" class="btn btn-primary btn-block" >Submit</button>
+                </div>
+                <a href ng-click="forgotPassword()" >Forgot Password?</a>
+            </form>
+        </div>
+    </div>   
+
+    <div class="loader" ng-show="anyRequestOngoing"></div>
+</div>
