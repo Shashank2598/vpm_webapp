@@ -1,25 +1,25 @@
-(function () {
-    angular
-        .module('mainApp')
-        .controller('navigationController', navigationController)
-
-    function navigationController($scope) {
-
-        $scope.logout = function () {
-            $scope.anyRequestOngoing = true;
-            navigationService.logout()
-                .then(function (response) {
+angular
+    .module('mainApp')
+    .controller('navigationController',
+        function navigationController($scope, $state, userService, navigationService) {
+            $scope.isLoggedIn = userService.isLogged;
+            $scope.anyRequestOngoing = false;
+            $scope.login = function () {
+                $state.go('login');
+            }
+            $scope.logout = function () {
+                $scope.anyRequestOngoing = true;
+                navigationService.logout()
+                    .then(function (response) {
                         $scope.anyRequestOngoing = false;
-                        userDataService.removeData();
-                        $state.go('login');
+                        userService.isLogged = false;
+                        localStorage.clear('APP-token');
+                        alert('Successfully Logged out');
+                        $state.reload();
                     },
-                    function (error) {
-                        $scope.anyRequestOngoing = false;
-                    }
-                );
-        }
-
-
-    }
-
-})();
+                        function (error) {
+                            $scope.anyRequestOngoing = false;
+                        }
+                    );
+            }
+        });
